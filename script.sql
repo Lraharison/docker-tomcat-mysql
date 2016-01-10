@@ -15,5 +15,5 @@ CREATE TABLE `person` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 LOCK TABLES `person` WRITE;
-INSERT INTO `person` VALUES (1,'Rakoto',52),(2,'Rabe',23);
+INSERT INTO `person`(`name`,`age`) values('Rakoto',25),('Rabe',38),('Jean',19),('Rasoa',18),('Paul',23),('Maurice',65),('KotoNandra',21);
 UNLOCK TABLES;
