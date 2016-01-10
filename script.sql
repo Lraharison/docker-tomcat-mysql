@@ -1,0 +1,19 @@
+USE mysql;
+FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+UPDATE user SET password=PASSWORD("rootpass") WHERE user='root';
+
+CREATE DATABASE IF NOT EXISTS mybdd CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+use mybdd;
+
+DROP TABLE IF EXISTS `person`;
+CREATE TABLE `person` (
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(200) NOT NULL,
+  `AGE` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+LOCK TABLES `person` WRITE;
+INSERT INTO `person` VALUES (1,'Rakoto',52),(2,'Rabe',23);
+UNLOCK TABLES;
